@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>연습문제2-1</h1>
+    <script>
+        var s1 = prompt("소수 판별기(2이상의 정수를 입력해주세요") * 1;
+        var isprime = true;
+
+        // var i = 2;
+        // if (s1 >= 2)
+        // {
+        //     while ((i * i) <= s1)
+        //     {
+        //         if (s1 % i === 0)
+        //         {
+        //             document.write(s1 + "은(는) 소수 아님");
+        //             isprime = false;
+        //             console.log(s1,i,isprime);
+        //             break;
+        //         }
+        //         console.log(s1,i,isprime);
+        //         i++;
+        //     }
+        //     if (isprime)
+        //         document.write(s1 + "은(는) 소수임");
+        // }
+        // else
+        //     document.write("2이상의 정수를 입력해주세요");
+
+        if (s1 >= 2)
+        {
+            for (var i = 2; (i*i) <= s1; i++)
+            {
+                if (s1 % i === 0)
+                {
+                    document.write(s1 + "은(는) 소수 아님");
+                    isprime = false;
+                    console.log(i, isprime);
+                    break;
+                }
+                console.log(i, isprime);
+            }
+            if (isprime)
+                document.write(s1 + "은(는) 소수임");
+        }
+        else
+            document.write("2이상의 정수를 입력해주세요");
+    </script>
+</body>
+</html>
