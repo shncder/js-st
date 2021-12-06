@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>소수 출력하기</h1>
+    <script>
+        var p1 = {
+            "start" : 2, // 판별중인 숫자
+            "index" : 2, // 판별에 이용중인 숫자
+            "prime" : function(target) // 소수판별기
+            {
+                this.index = 2;
+                while ((this.index * this.index) <= this.start)
+                {
+                    if (this.start % this.index === 0)
+                        return false;
+                    this.index++;
+                }
+                return true;
+            },
+            "print" : function() // 출력기
+            {
+                this.start = 2;
+                while (this.start <= 10000)
+                {
+                    if (this.prime(this.start))
+                        console.log (this.start)
+                    this.start++;
+                }
+            }
+    }
+    </script>
+</body>
+</html>

@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h1>구구단 4,5단</h1>
+    <h1>2단 구현하기(html)</h1>
     <script>
-        var s1 = prompt("원하는 구구단을 입력해주세요");
+        var result = [];
 
-        for (var i = 1; i <= 9; i++)
-            console.log (s1 + " * " + i + " = " + (s1 * i));
+        for (var i = 0; i < 9; i++)
+        {
+            result[i] = "2 * " + (i+1) + " = " + (2 * (i+1));
+            document.write(result[i], "<br>");
+        }
     </script>
 </body>
 </html>

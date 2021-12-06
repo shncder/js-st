@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기1</title>
+</head>
+<body>
+    <h1>문자열 계산기</h1>
+    <div id = "output">아웃풋</div>
+    <script>
+        var str1 = [];
+        var str2 = [];
+        var result = 0;
+
+        var cal = function() 
+        {
+            var i = 0;
+            while(true)
+            {
+                str1[i] = prompt("숫자를 넣어주세요") * 1;
+                str2[i] = prompt("사칙연산을 넣어주세요('='을 넣으면 좋료됩니다.)");
+                if (str2[i] === "=")
+                    return;
+                i++;
+            }
+        }
+
+        var rst = function()
+        {
+            var i = 0;
+            while (str2[i] != "=")
+            {
+                if (str2[i] === "+")
+                {
+                    result = str1[i] + str1[i + 1]
+                    document.write(str1[i] + " + ")
+                    i++;
+                    continue
+                }
+                else if (str2[i] === "-")
+                {
+                    result = str1[i] - str1[i + 1]
+                    document.write(str1[i] + " - ")
+                    i++;
+                    continue
+                }
+                else if (str2[i] === "*")
+                {
+                    result = str1[i] * str1[i + 1]
+                    document.write(str1[i] + " * ")
+                    i++;
+                    continue
+                }
+                else (str2[i] === "/")
+                {
+                    result = str1[i] / str1[i + 1]
+                    document.write(str1[i] + " / ")
+                    i++;
+                    continue
+                }
+            }
+            if ((result + "").split(".").length === 2)
+            {
+                result = String(result).split(".");
+                result = Number(result[0]);
+            }
+            document.write(str1[i] + " = " + result)
+        }
+
+        var main = function()
+        {
+            cal();
+            rst();
+        }
+
+        main()
+    </script>
+</body>
+</html>
